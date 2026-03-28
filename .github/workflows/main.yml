@@ -35,4 +35,4 @@ jobs:
           MSG_DB_ERR: ${{ secrets.MSG_DB_ERR }}
           MSG_OK: ${{ secrets.MSG_OK }}
           MSG_EMPTY: ${{ secrets.MSG_EMPTY }}
-        run: python test6.py
+        run: python main.py
