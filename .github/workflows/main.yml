@@ -1,0 +1,38 @@
+name: Python Practice Runner
+
+on:
+  schedule:
+    - cron: '*/10 * * * *'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          pip install -r requerimientos.txt
+
+      - name: Run Test 6
+        env:
+          URL: ${{ secrets.URL }}
+          NAME: ${{ secrets.NAME }}
+          SYNC_BATCH_SIZE: ${{ secrets.SYNC_BATCH_SIZE }}
+          DB_COL: ${{ secrets.DB_COL }}
+          DB_FLD_S: ${{ secrets.DB_FLD_S }}
+          DB_FLD_W: ${{ secrets.DB_FLD_W }}
+          DB_FLD_P: ${{ secrets.DB_FLD_P }}
+          MSG_D_ERR: ${{ secrets.MSG_D_ERR }}
+          MSG_H_ERR: ${{ secrets.MSG_H_ERR }}
+          MSG_DB_ERR: ${{ secrets.MSG_DB_ERR }}
+          MSG_OK: ${{ secrets.MSG_OK }}
+          MSG_EMPTY: ${{ secrets.MSG_EMPTY }}
+        run: python test6.py
