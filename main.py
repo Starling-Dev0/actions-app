@@ -1,15 +1,14 @@
-import os, httpx
+import os, httpx, asyncio, json
 from dotenv import load_dotenv
 from fastapi import FastAPI
 from motor.motor_asyncio import AsyncIOMotorClient
-from datetime import datetime
+from datetime import datetime, timezone
 
 load_dotenv()
-a, n = FastAPI(), datetime.now
+a = FastAPI()
 c = AsyncIOMotorClient(os.getenv("URL"))[os.getenv("NAME")]
 b = int(os.getenv("SYNC_BATCH_SIZE", 10))
 
-# Variables de mapeo y mensajes desde ENV
 CL, S, W, P = os.getenv("DB_COL"), os.getenv("DB_FLD_S"), os.getenv("DB_FLD_W"), os.getenv("DB_FLD_P")
 M1, M2, M3, M4, M5 = os.getenv("MSG_D_ERR"), os.getenv("MSG_H_ERR"), os.getenv("MSG_DB_ERR"), os.getenv("MSG_OK"), os.getenv("MSG_EMPTY")
 
@@ -25,12 +24,17 @@ async def s():
                     try:
                         res = await cl.post(u, json=py)
                         if res.status_code < 400:
-                            print("a")
-                            await c[CL].update_one({"_id": i["_id"]}, {"$set": {S: True, "f_e": n()}})
-                        else: return {"st": M1, "c": res.status_code, "id": str(i["_id"])}
-                    except Exception as e: return {"st": M2, "m": str(e)}
+                            await c[CL].update_one(
+                                {"_id": i["_id"]}, 
+                                {"$set": {S: True, "f_e": datetime.now(timezone.utc)}}
+                            )
+                        else: 
+                            return {"st": M1, "c": res.status_code, "id": str(i["_id"])}
+                    except Exception as e: 
+                        return {"st": M2, "m": str(e)}
         return {"st": M4, "n": len(r)}
-    except Exception as e: return {"st": M3, "m": str(e)}
+    except Exception as e: 
+        return {"st": M3, "m": str(e)}
     
 if __name__ == "__main__":
     import asyncio
