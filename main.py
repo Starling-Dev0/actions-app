@@ -26,7 +26,7 @@ async def s():
                         res = await cl.post(u, json=py)
                         if res.status_code < 400:
                             print("a")
-                            # await c[CL].update_one({"_id": i["_id"]}, {"$set": {S: True, "f_e": n()}})
+                            await c[CL].update_one({"_id": i["_id"]}, {"$set": {S: True, "f_e": n()}})
                         else: return {"st": M1, "c": res.status_code, "id": str(i["_id"])}
                     except Exception as e: return {"st": M2, "m": str(e)}
         return {"st": M4, "n": len(r)}
