@@ -31,3 +31,7 @@ async def s():
                     except Exception as e: return {"st": M2, "m": str(e)}
         return {"st": M4, "n": len(r)}
     except Exception as e: return {"st": M3, "m": str(e)}
+    
+if __name__ == "__main__":
+    import asyncio
+    asyncio.run(s())
