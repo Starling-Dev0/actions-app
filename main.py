@@ -30,8 +30,3 @@ async def s():
                     except Exception as e: return {"st": M2, "m": str(e)}
         return {"st": M4, "n": len(r)}
     except Exception as e: return {"st": M3, "m": str(e)}
-    
-# test6.py
-# Profe, no me salia la conexion con el diccionario anterior
-# asi que probe a importar os para ver si lee las variables.
-# Todavia me falta limpiar el codigo pero ya funciona la peticion.
