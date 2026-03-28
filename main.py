@@ -34,7 +34,4 @@ async def s():
     
 if __name__ == "__main__":
     import asyncio
-    # Esto dispara la función 's' cuando se corre como script
-    print("Iniciando proceso de sincronización en GitHub...")
     resultado = asyncio.run(s())
-    print(f"Resultado final: {resultado}")
