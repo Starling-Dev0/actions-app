@@ -34,4 +34,4 @@ async def s():
     
 if __name__ == "__main__":
     import asyncio
-    resultado = asyncio.run(s())
+    asyncio.run(s())
