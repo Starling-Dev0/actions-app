@@ -1,0 +1,55 @@
+{
+  "_id": {
+    "$oid": "69c8346d29fa7f83d2b79268"
+  },
+  "ali_id_rival": "jg team",
+  "function": "generar_payload_inicio",
+  "webhook_url": "https://discord.com/api/webhooks/1487511823698886918/lM3qzFlmWl7RVq9Y8wLWcrAPSjS49jPgN6IAodfoqf1JQW49ifxslKD3AY0xk3tmGhkx",
+  "enviado": false,
+  "fech_reg": {
+    "$date": "2026-03-28T20:05:00.817Z"
+  },
+  "payload": {
+    "content": "@everyone ⚔️ **¡EMPIEZA LA GUERRA!** ⚔️",
+    "embeds": [
+      {
+        "title": "JG Team | Perfil del Rival",
+        "color": 2451498,
+        "thumbnail": {
+          "url": "https://cdn.galaxylifegame.net/content/img/alliance_flag/AllianceLogos/flag_3_12_14.png"
+        },
+        "fields": [
+          {
+            "name": "Nivel",
+            "value": "68",
+            "inline": true
+          },
+          {
+            "name": "Puntos",
+            "value": "2,334,293",
+            "inline": true
+          },
+          {
+            "name": "Éxito",
+            "value": "58W / 10L (85.29%)",
+            "inline": true
+          },
+          {
+            "name": "👥 Lista de miembros (29/50)",
+            "value": "👑 **Dablju** (50,586)\n🎖️ **Aza99** (668,403)\n🎖️ **lucaswmunhoz** (62,289)\n🎖️ **Zjawie** (25,594)\n🎖️ **Kiemontoja** (13,608)\n🎖️ **Dziadzius.** (12,986)\n⚔️ **MISZKISDOGOOOO** (326,902)\n⚔️ **AlexisMR** (195,791)\n⚔️ **SemihFRKN** (181,452)\n⚔️ **Hubercik** (168,454)\n⚔️ **HSBC** (141,097)\n⚔️ **Vuneit** (84,404)\n⚔️ **samuxx09** (68,518)\n⚔️ **Pizzax37** (54,242)\n⚔️ **Laek23** (52,315)",
+            "inline": true
+          },
+          {
+            "name": "⠀",
+            "value": "⚔️ **BreakerHead115** (41,328)\n⚔️ **Murffey** (39,615)\n⚔️ **MANTEFOREVER** (31,609)\n⚔️ **TOOXX** (28,185)\n⚔️ **ivansena433** (21,005)\n⚔️ **sajmir** (19,091)\n⚔️ **WieczorekMordo** (18,999)\n⚔️ **Healinski** (10,779)\n⚔️ **joan.loba** (8,518)\n⚔️ **SuperrDinDon** (5,478)\n⚔️ **Davidjestemok** (2,396)\n⚔️ **farruko2004** (443)\n⚔️ **MaryMuffin** (206)\n⚔️ **HubertX** (0)",
+            "inline": true
+          }
+        ],
+        "footer": {
+          "text": "Guerra: rohirrim - 0jg team"
+        },
+        "timestamp": "2026-03-28T20:05:00.817729+00:00"
+      }
+    ]
+  }
+}
